@@ -1,0 +1,35 @@
+<%- include("./partial/header") %>
+
+<%- include("./partial/nav") %>
+<!-- here write content -->
+
+<div class="page1  p-4 " style="min-height: 91vh; width: 100%;background: #fc00ff;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #00dbde, #fc00ff);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #00dbde, #fc00ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+">
+      <div class="text-center text-white fs-3 fw-bold mb-4">
+        <a class="text-white text-decoration-none " href="/create"><button type="button" class="btn btn-success">Create Book</button></a>
+      </div>
+     
+     <div class="cards d-flex justify-content-around align-items-center gap-2 flex-wrap">
+      <% bookdata.forEach(function(book,index){ %>
+        <div class="card text-center text-capitalize p-2" style="width: 14rem; min-height: 450px;">
+          <img class="card-img-top border rounded-3" style="height: 200px;"  src="/images/<%=book.image%>" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><%=book.bookname%></h5>
+            <h5 class="card-title"><%=book.author%></h5>
+            <img height="30px" width="150px" src="/picture/star.jpg" class="img-fluid" alt="...">
+            <h5 class="card-title"><%=book.language%></h5>
+            <h5 class="card-title"><%=book.category%></h5>
+            <h5 class="card-title text-danger fw-bold"><%=book.price%>rs/-</h5>
+            <a href="/details/<%=book._id%>" class="btn btn-primary">Book Details</a>
+          </div>
+        </div>
+      <% })%>
+     </div>
+   
+</div>
+
+
+<!-- this is footer -->
+<%- include("./partial/footer") %>

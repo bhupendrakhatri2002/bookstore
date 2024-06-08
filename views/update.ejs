@@ -1,0 +1,154 @@
+<%- include("./partial/header.ejs") %> <%- include("./partial/nav.ejs") %>
+<!-- here write content -->
+
+<div
+  class="bg-primary d-flex text-white p-2"
+  style="
+    min-height: 90vh;
+    width: 100%;
+    background: #59c173; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #5d26c1,
+      #a17fe0,
+      #59c173
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #5d26c1,
+      #a17fe0,
+      #59c173
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  "
+>
+  <div class="container">
+    <div class="row justify-content-evenly align-items-center text-white">
+      <div class="col-md-4">
+        <div class="pt-2 text-center">
+          <img
+            class="border rounded-4"
+            style="height: 60%; width: 70%"
+            src="/images/<%=currentdata.image%>"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="pt-2 text-center">
+          <img
+            class=" "
+            style="height: 10vh; width: 90%"
+            src="/picture/arrow.png"
+            alt=""
+          />
+        </div>
+      </div>
+      <div
+        class="col-md-5 border rounded-4 p-4"
+        style="
+          background-image: url('/picture/updateimg1.avif');
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+        "
+      >
+        <div class="form m-auto" style="width: 75%">
+          <form
+            action="/update/<%=currentdata._id%>"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <div class="form-group py-1">
+              <label for="exampleFormControlFile1">Choose file input</label>
+              <input
+                type="file"
+                name="image"
+                class="form-control-file"
+                id="exampleFormControlFile1"
+              />
+              <input
+                type="hidden"
+                name="oldimage"
+                value="<%=currentdata.image%>"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="formGroupExampleInput">Book Name</label>
+              <input
+                type="text"
+                name="bookname"
+                class="form-control"
+                id="formGroupExampleInput"
+                placeholder="Enter Book name"
+                value="<%=currentdata.bookname%>"
+              />
+            </div>
+            <div class="form-group">
+              <label for="formGroupExampleInput2">Author Name</label>
+              <input
+                type="text"
+                name="author"
+                class="form-control"
+                id="formGroupExampleInput2"
+                placeholder="Enter Author name"
+                value="<%=currentdata.author%>"
+              />
+            </div>
+            <div class="form-group">
+              <label for="formGroupExampleInput2">Category</label>
+              <input
+                type="text"
+                name="category"
+                class="form-control"
+                id="formGroupExampleInput2"
+                placeholder="Category of book"
+                value="<%=currentdata.category%>"
+              />
+            </div>
+            <div class="form-group">
+              <label for="formGroupExampleInput2">Language</label>
+              <input
+                type="text"
+                name="language"
+                class="form-control"
+                id="formGroupExampleInput2"
+                placeholder="Enter Book Language"
+                value="<%=currentdata.language%>"
+              />
+            </div>
+            <div class="form-group">
+              <label for="formGroupExampleInput2">Price</label>
+              <input
+                type="text"
+                name="price"
+                class="form-control"
+                id="formGroupExampleInput2"
+                placeholder="Enter book price"
+                value="<%=currentdata.price%>"
+              />
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Decription</label>
+              <textarea
+                class="form-control"
+                name="description"
+                id="exampleFormControlTextarea1"
+                rows=" 3"
+              >
+ <%=currentdata.description%></textarea
+              >
+            </div>
+
+            <div class="text-center p-2">
+              <button type="submit" class="btn btn-primary">Update Book</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- this is footer -->
+<%- include("./partial/footer.ejs") %>

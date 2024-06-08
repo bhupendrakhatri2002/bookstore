@@ -1,0 +1,213 @@
+<%- include("./partial/header") %> <%- include("./partial/nav") %>
+<!-- here write content -->
+
+<div
+  class="page1"
+  style="
+    min-height: 100%;
+    width: 100%;
+    background: #00c3ff; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #ffff1c,
+      #00c3ff
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #ffff1c,
+      #00c3ff
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  "
+>
+  <div id="carouselExample" class="carousel slide">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/picture/slider1.jpg" class="d-block w-100" alt="..." />
+      </div>
+      <div class="carousel-item">
+        <img src="/picture/slider2.jpg" class="d-block w-100" alt="..." />
+      </div>
+      <div class="carousel-item">
+        <img src="/picture/slider3.jpg" class="d-block w-100" alt="..." />
+      </div>
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExample"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExample"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <h1 class="fs-1 text-center fw-bold p-4 text-capitalize">
+    Welcome to our Book Store
+  </h1>
+
+  <div
+    class="books d-flex justify-content-around gap-5 align-item-center flex-wrap px-4 pb-2"
+  >
+    <img
+      class="img"
+      src="/books/book1.jpg"
+      alt=""
+      style="height: 250px; width: 170px"
+    />
+
+    <img
+      class="img"
+      src="/books/book2.jpeg"
+      alt=""
+      style="height: 250px; width: 170px"
+    />
+
+    <img
+      class="img"
+      src="/books/book3.jpeg"
+      alt=""
+      style="height: 250px; width: 170px"
+    />
+
+    <img
+      class="img"
+      src="/books/book4.jpeg"
+      alt=""
+      style="height: 250px; width: 170px"
+    />
+
+    <img
+      class="img"
+      src="/books/book5.webp"
+      alt=""
+      style="height: 250px; width: 170px"
+    />
+
+    <img
+      class="img"
+      src="/books/book6.jpeg"
+      alt=""
+      style="height: 250px; width: 170px"
+    />
+
+    <img
+      class="img"
+      src="/books/book7.jpeg"
+      alt=""
+      style="height: 250px; width: 170px"
+    />
+
+    <img
+      class="img"
+      src="/books/book8.jpeg"
+      alt=""
+      style="height: 250px; width: 170px"
+    />
+
+    <img
+      class="img"
+      src="/books/book9.jpeg"
+      alt=""
+      style="height: 250px; width: 170px"
+    />
+
+    <img
+      class="img"
+      src="/books/book10.webp"
+      alt=""
+      style="height: 250px; width: 170px"
+    />
+
+    <img
+      class="img"
+      src="/books/book11.jpg"
+      alt=""
+      style="height: 250px; width: 170px"
+    />
+
+    <img
+      class="img"
+      src="/books/book12.webp"
+      alt=""
+      style="height: 250px; width: 170px"
+    />
+    <!-- <img src="/books/book13.jpg" alt="" style="height: 250px; width: 170px;">
+      <img src="/books/book14.jpg " alt="" style="height: 250px; width: 170px;"> -->
+  </div>
+
+  <div class="div text-center py-3">
+    <a href="/library"
+      ><button class="btn btn-primary" type="submit">Explore more</button></a
+    >
+  </div>
+
+  <div class="footer bg-dark py-2">
+    <div class="container">
+      <div class="row justify-content-around align-items-center text-white">
+        <div class="col-md-4">
+          <div class="company">
+            <h5>Company</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a class="text-decoration-none text-white" href="/">Home</a>
+              </li>
+              <li>
+                <a class="text-decoration-none text-white" href="/about"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a class="text-decoration-none text-white" href="/library"
+                  >Library</a
+                >
+              </li>
+              <li>
+                <a class="text-decoration-none text-white" href="/">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="contact">
+            <h5>Contact</h5>
+            <ul class="list-unstyled">
+              <li>Name: Bhupendra Khatri</li>
+              <li>Mobile no.: +918989271347</li>
+              <li>Email: bhupendra191102@gmail.com</li>
+              <li>Address: Sonagir, Bhopal (M.P.)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="text-center">
+            <h5>Social Media</h5>
+            <div class="d-flex align-items-center justify-content-center pt-2">
+              <a href=""><img src="/picture/insta.png" alt="" /></a>
+              <a href=""><img src="/picture/face.png" alt="" /></a>
+              <a
+                href="https://www.linkedin.com/in/bhupendra-khatri-74605518b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                ><img src="/picture/link.png" alt=""
+              /></a>
+              <a href="https://github.com/bhupendrakhatri2002"
+                ><img src="/picture/git.png" alt=""
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- this is footer -->
+<%- include("./partial/footer") %>

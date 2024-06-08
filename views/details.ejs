@@ -1,0 +1,87 @@
+<%- include("./partial/header.ejs") %> <%- include("./partial/nav.ejs") %>
+<!-- here write content -->
+
+<div
+  class=" d-flex text-white p-2"
+  style="min-height: 91vh; width: 100%;background: #59C173;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #5D26C1, #a17fe0, #59C173);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #5D26C1, #a17fe0, #59C173); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+   "
+>
+  <div class="container">
+    <div class="text-center text-white fw-bold">
+      <h1>Book Details</h1>
+    </div>
+    <div class="row justify-content-around align-items-center text-white">
+      <div class="col-md-4">
+        <div class="pt-2">
+          <img
+            class="border rounded-4"
+            style="height: 65vh; width: 80%"
+            src="/images/<%=bookdata.image%>"
+            alt=""
+          />
+        </div>
+      </div>
+      <div
+        class="col-md-6 border rounded-4 p-4"
+        style="
+          height: 70vh;
+          background-image: url('/picture/detailsbac.jpg');
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+        "
+      >
+        <div class="content pt-3">
+          <h5 class="fs-2">
+            📖Book Name:
+            <span class="fs-3 text-warning text-capitalize"
+              ><%=bookdata.bookname%></span
+            >
+          </h5>
+          <h5 class="fs-2">
+            🤵‍♂️Author:
+            <span class="fs-3 text-warning text-capitalize"
+              ><%=bookdata.author%></span
+            >
+          </h5>
+          <h5 class="fs-2">
+            🌐Language:<span class="fs-3 text-warning text-capitalize"
+              ><%=bookdata.language%></span
+            >
+          </h5>
+          <h5 class="fs-2">
+            🔠Category:<span class="fs-3 text-warning text-capitalize"
+              ><%=bookdata.category%></span
+            >
+          </h5>
+
+          <h5 class="fs-2">
+            📅Description:<span class="fs-3 text-warning text-capitalize"
+              ><%=bookdata.description%></span
+            >
+          </h5>
+          <h5 class="fs-2">
+            🏷️Price:<span class="fs-2 fw-bold text-danger text-capitalize"
+              ><%=bookdata.price%>Rs/-</span
+            >
+          </h5>
+          <div class="div mt-5 d-flex gap-3">
+            <a href="/update/<%=bookdata.id%>" class="btn btn-success"
+              >Update Book</a
+            >
+            <a href="/library" class="btn btn-light">Go Back</a>
+            <a href="/delete/<%=bookdata.id%>" class="btn btn-danger"
+              >Delete Book</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- this is footer -->
+<%- include("./partial/footer.ejs") %>

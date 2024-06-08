@@ -1,0 +1,16 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set full height and width for HTML and body */
+html, body {
+    height: 100%;
+    width: 100%;
+}
+.img:hover{
+  scale: 1.1;
+  box-shadow: 10px 20px 10px rgba(165, 54, 54, 0.5);
+}

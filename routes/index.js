@@ -27,13 +27,25 @@ router.get("/create",function(req,res,next){
 })
 
 router.post("/create",upload,async function(req,res,next){
-  const bookdata =new books({
-    ...req.body,
-    image:req.file.filename
-    
-  })
-  await bookdata.save()
-  res.redirect("/library")
+  try {
+    // Check if a file was uploaded
+    const imageFilename = req.file ? req.file.filename : null;
+
+    // Create a new book entry with or without an image
+    const bookdata = new books({
+      ...req.body,
+      image: imageFilename
+    });
+
+    // Save the book data to the database
+    await bookdata.save();
+
+    // Redirect to the library page or any other page
+    res.redirect('/library');
+  } catch (error) {
+    // Handle errors (e.g., database errors, validation errors)
+    next(error);
+  }
 })
 
 router.get("/library",async function(req,res,next){
@@ -64,10 +76,29 @@ router.post("/update/:id",upload,async function(req,res,next){
 })
 
 router.get("/delete/:id",async function(req,res,next){
-  const data =await books.findByIdAndDelete(req.params.id)
-  fs.unlinkSync(path.join(__dirname,"..","public","images",data.image))
-  
-  res.redirect("/library")
+  try {
+    // Find and delete the book by ID
+    const data = await books.findByIdAndDelete(req.params.id);
+
+    // Check if the book was found and has an associated image
+    if (data && data.image) {
+      // Construct the file path
+      const filePath = path.join(__dirname, '..', 'public', 'images', data.image);
+
+      // Check if the file exists before attempting to delete it
+      if (fs.existsSync(filePath)) {
+        fs.unlinkSync(filePath);
+      } else {
+        console.warn(`File not found: ${filePath}`);
+      }
+    }
+
+    // Redirect to the library page
+    res.redirect('/library');
+  } catch (error) {
+    // Handle any errors that occurred during the delete operation
+    next(error);
+  }
 })
 
 
